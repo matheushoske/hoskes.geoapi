@@ -51,8 +51,11 @@ async function pingRemoteServer() {
 app.get('/json.gp', async (req, res) => {
     const start = performance.now();
 
-    let ip = req.clientIp;
-    if (ip === '::1' || ip === '127.0.0.1') {
+    // Check if IP is provided as query parameter, otherwise use client IP
+    let ip = req.query.ip || req.clientIp;
+    
+    // If no IP provided and client IP is localhost, use fallback
+    if (!req.query.ip && (ip === '::1' || ip === '127.0.0.1')) {
         ip = '89.163.154.134'; // fallback IP for local testing
     }
 

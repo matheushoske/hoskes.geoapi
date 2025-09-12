@@ -22,13 +22,21 @@
  - 🌍 IP-based location lookup using MaxMind GeoLite2
  - ⚡ Fast response time with accurate delay reporting
  - 🔌 Plugin support via `?plugins=plugin1,plugin2` in the URL
+ - 🎯 **NEW**: Query specific IP addresses via `?ip=1.1.1.1` parameter
  - ✅ Currently supported plugins:
    - `weather`: Current weather based on coordinates
    - `language`: Primary language based on country
    
 Access via GET: 
 ```bash
- https://geoapi-hoskes.onrender.com/json.gp
+# Get location for your own IP
+https://geoapi-hoskes.onrender.com/json.gp
+
+# Get location for a specific IP
+https://geoapi-hoskes.onrender.com/json.gp?ip=1.1.1.1
+
+# Get location for specific IP with plugins
+https://geoapi-hoskes.onrender.com/json.gp?ip=8.8.8.8&plugins=weather,language
 ```
 
 
@@ -108,6 +116,11 @@ Each plugin enriches the JSON response. Plugins are modular and stored in `/plug
 	```
  Access via:  
  `http://localhost:3000/json.gp?plugins=weather,language`
+
+**Examples:**
+- `http://localhost:3000/json.gp` - Get your own IP location
+- `http://localhost:3000/json.gp?ip=1.1.1.1` - Get location for specific IP
+- `http://localhost:3000/json.gp?ip=8.8.8.8&plugins=weather,language` - Get location with plugins
 
 
 ## 📄 License
