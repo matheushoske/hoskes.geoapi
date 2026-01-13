@@ -15,6 +15,7 @@
  - Region
  - Country
  - Continent
+ - Postal Code
  - Latitude & Longitude
  - Timezone
  - ...and more!	
@@ -61,7 +62,8 @@ https://geoapi-hoskes.onrender.com/json.gp?ip=8.8.8.8&plugins=weather,language
   "hoskes_locplugin_latitude": "51.5064",
   "hoskes_locplugin_longitude": "-0.02",
   "hoskes_locplugin_locationAccuracyRadius": "20",
-  "hoskes_locplugin_timezone": "Europe/London"
+  "hoskes_locplugin_timezone": "Europe/London",
+  "hoskes_locplugin_postalCode": "E14"
 }
 ```
 
